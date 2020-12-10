@@ -3,6 +3,8 @@
 <!-- **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)* -->
 
 - [javascript](#javascript)
+  - [隐式转换](#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2)
+      - [转换规则](#%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99)
 - [typescript](#typescript)
 - [slatejs](#slatejs)
 - [flutter](#flutter)
@@ -11,7 +13,7 @@
 
 # javascript
 
-## [隐式转换] (https://blog.csdn.net/lyh1299259684/article/details/80565419)
+## [隐式转换](https://blog.csdn.net/lyh1299259684/article/details/80565419)
 在js中，当运算符在运算时，如果两边数据不统一，CPU就无法计算，这时我们编译器会自动将运算符两边的数据做一个数据类型转换，转成一样的数据类型再计算
 
 #### 转换规则
