@@ -28,10 +28,16 @@
     console.log(1 + true) //2 
 ```
 
-2. 关系运算符：会把其他数据类型转换成number之后再比较关系
+2. 关系运算符：会把其他数据类型转换成number之后再比较关系, 当运算符两边多少string的情况下，会转为Unicode编码的数字。
 ```
     console.log('2' > 10) //false
     console.log('2' > '10') //true
+```
+
+3. 复杂数据类型在隐式转换时会先转成String，然后再转成Number运算
+
+```
+  console.log([1,2] == '1,2') //true
 ```
 
 #### [React setState什么时候同步?时候时候异步?](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/17)
@@ -41,10 +47,10 @@
 # css
 
 ## css垂直居中对齐的4中方法
-1.当 line-height 和 height 两个属性设置为相同的高度
-2.父元素设置为 display:table-cell 和 vertical-align:middle
-3.父元素固定高度,子元素 display: absolute; height: 50px; top: 50%; margin-top: -25px;
-4.父元素, display: flex; align-items: center;
+1. 当 line-height 和 height 两个属性设置为相同的高度
+2. 父元素设置为 display:table-cell 和 vertical-align:middle
+3. 父元素固定高度,子元素 display: absolute; height: 50px; top: 50%; margin-top: -25px;
+4. 父元素, display: flex; align-items: center;
 
 # typescript
 
