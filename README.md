@@ -41,10 +41,10 @@
 # css
 
 ## css居中对齐的4中方法
-1.当 line-height 和 height 两个属性设置为相同的高度
-2.父元素设置为 display:table-cell 和 vertical-align:middle
-3.父元素固定高度,子元素 display: absolute; height: 50px; top: 50%; margin-top: -25px;
-4.父元素, display: flex; align-items: center;
+1. 当 line-height 和 height 两个属性设置为相同的高度
+2. 父元素设置为 display:table-cell 和 vertical-align:middle
+3. 父元素固定高度,子元素 display: absolute; height: 50px; top: 50%; margin-top: -25px;
+4. 父元素, display: flex; align-items: center;
 
 # typescript
 
