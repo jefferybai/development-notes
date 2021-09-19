@@ -3,12 +3,12 @@
 <!-- **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)* -->
 
 - [javascript](#javascript)
-  - [js的六种原始类型](#js%E7%9A%84%E5%85%AD%E7%A7%8D%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B)
-  - [typeof vs instanceof](#typeof-vs-instanceof)
-  - [对象转换原始类型的规则](#%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A7%84%E5%88%99)
-  - [四则运算符](#%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97%E7%AC%A6)
-  - [比较运算法](#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E6%B3%95)
-  - [this](#this)
+      - [js的六种原始类型](#js%E7%9A%84%E5%85%AD%E7%A7%8D%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B)
+      - [typeof vs instanceof](#typeof-vs-instanceof)
+      - [对象转换原始类型的规则](#%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A7%84%E5%88%99)
+      - [四则运算符](#%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97%E7%AC%A6)
+      - [比较运算法](#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E6%B3%95)
+      - [this](#this)
   - [隐式转换](#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2)
       - [转换规则](#%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99)
       - [React setState 什么时候同步?时候时候异步?](#react-setstate-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%90%8C%E6%AD%A5%E6%97%B6%E5%80%99%E6%97%B6%E5%80%99%E5%BC%82%E6%AD%A5)
@@ -27,26 +27,26 @@
 
 # javascript
 
-## js的六种原始类型 
+#### js的六种原始类型 
 string、 number、 boolean、 undefine、 null、 symbol
 
-## typeof vs instanceof
+#### typeof vs instanceof
 typeof能判断基本的数据类型。 对于object类型，除了function类型其他类型都显示object
 instanceof判断么个函数的引用类型是否出现在实例类型的原型链上面
 
-## 对象转换原始类型的规则
+#### 对象转换原始类型的规则
 - 如果对象是原始类型就返回原始类型
 - 如果不是原始类型会调用valueOf， 如果valueOf不是原始类型，那么会调用toString。 也可以重写toPrimitive该方法优先级最高
 
-## 四则运算符
+#### 四则运算符
 - 加减乘除运算符
   - 如果不是number类型， 先转换为number再进行运算
   - 在加法运算符中，如果运算符一方的类型有字符串，那么会将运算符的另外一侧也转换为字符串再相加
-## 比较运算法
+#### 比较运算法
 - 如果是字符串比较的unicode索引
 - 如果是引用类型先转换为number类型再进行比较
 
-## this
+#### this
 - 在全局作用于下调用函数this是window
 - new的function里面的this是自己的实例
 - 箭头里面的this是上下文
