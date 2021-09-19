@@ -3,6 +3,7 @@
 <!-- **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)* -->
 
 - [javascript](#javascript)
+  - [基础知识](#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
       - [js的六种原始类型](#js%E7%9A%84%E5%85%AD%E7%A7%8D%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B)
       - [typeof vs instanceof](#typeof-vs-instanceof)
       - [对象转换原始类型的规则](#%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A7%84%E5%88%99)
