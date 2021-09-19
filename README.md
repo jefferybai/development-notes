@@ -27,6 +27,8 @@
 
 # javascript
 
+## 基础知识
+
 #### js的六种原始类型 
 string、 number、 boolean、 undefine、 null、 symbol
 
