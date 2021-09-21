@@ -65,7 +65,10 @@ instanceof判断么个函数的引用类型是否出现在实例类型的原型�
 - Messagechannel， 会忽略函数
 - 自己实现递归的[deepclone](./deepclone.js) 
 
-
+#### 原型链
+- 调用一个对象的方法时候， 对象会从自己的实例和原型链上面查找有没有这个函数
+- 每个对象实例都有一个_proto_属性指向自己的原型链
+- 每个函数都有一个prototype属性指向当前函数的实例
 
 ## [隐式转换](https://blog.csdn.net/lyh1299259684/article/details/80565419)
 
