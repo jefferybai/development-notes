@@ -4,17 +4,17 @@
 
 - [javascript](#javascript)
   - [基础知识](#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
-      - [js的六种原始类型](#js%E7%9A%84%E5%85%AD%E7%A7%8D%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B)
-      - [typeof vs instanceof](#typeof-vs-instanceof)
-      - [对象转换原始类型的规则](#%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A7%84%E5%88%99)
-      - [四则运算符](#%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97%E7%AC%A6)
-      - [比较运算法](#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E6%B3%95)
-      - [this](#this)
-      - [闭包](#%E9%97%AD%E5%8C%85)
-      - [深度拷贝](#%E6%B7%B1%E5%BA%A6%E6%8B%B7%E8%B4%9D)
+    - [js 的六种原始类型](#js%E7%9A%84%E5%85%AD%E7%A7%8D%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B)
+    - [typeof vs instanceof](#typeof-vs-instanceof)
+    - [对象转换原始类型的规则](#%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A7%84%E5%88%99)
+    - [四则运算符](#%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97%E7%AC%A6)
+    - [比较运算法](#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E6%B3%95)
+    - [this](#this)
+    - [闭包](#%E9%97%AD%E5%8C%85)
+    - [深度拷贝](#%E6%B7%B1%E5%BA%A6%E6%8B%B7%E8%B4%9D)
   - [隐式转换](#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2)
-      - [转换规则](#%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99)
-      - [React setState 什么时候同步?时候时候异步?](#react-setstate-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%90%8C%E6%AD%A5%E6%97%B6%E5%80%99%E6%97%B6%E5%80%99%E5%BC%82%E6%AD%A5)
+    - [转换规则](#%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99)
+    - [React setState 什么时候同步?时候时候异步?](#react-setstate-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%90%8C%E6%AD%A5%E6%97%B6%E5%80%99%E6%97%B6%E5%80%99%E5%BC%82%E6%AD%A5)
 - [css](#css)
   - [css 垂直居中对齐的 4 中方法](#css-%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90%E7%9A%84-4-%E4%B8%AD%E6%96%B9%E6%B3%95)
 - [typescript](#typescript)
@@ -32,43 +32,62 @@
 
 ## 基础知识
 
-#### js的六种原始类型 
+#### js 的六种原始类型
+
 string、 number、 boolean、 undefine、 null、 symbol
 
 #### typeof vs instanceof
-typeof能判断基本的数据类型。 对于object类型，除了function类型其他类型都显示object
-instanceof判断么个函数的引用类型是否出现在实例类型的原型链上面
+
+typeof 能判断基本的数据类型。 对于 object 类型，除了 function 类型其他类型都显示 object
+
+instanceof 判断么个函数的引用类型是否出现在实例类型的原型链上面
 
 #### 对象转换原始类型的规则
+
 - 如果对象是原始类型就返回原始类型
-- 如果不是原始类型会调用valueOf， 如果valueOf不是原始类型，那么会调用toString。 也可以重写toPrimitive该方法优先级最高
+- 如果不是原始类型会调用 valueOf， 如果 valueOf 不是原始类型，那么会调用 toString。 也可以重写 toPrimitive 该方法优先级最高
 
 #### 四则运算符
+
 - 加减乘除运算符
-  - 如果不是number类型， 先转换为number再进行运算
+  - 如果不是 number 类型， 先转换为 number 再进行运算
   - 在加法运算符中，如果运算符一方的类型有字符串，那么会将运算符的另外一侧也转换为字符串再相加
+
 #### 比较运算法
-- 如果是字符串比较的unicode索引
-- 如果是引用类型先转换为number类型再进行比较
+
+- 如果是字符串比较的 unicode 索引
+- 如果是引用类型先转换为 number 类型再进行比较
 
 #### this
-- 在全局作用于下调用函数this是window
-- new的function里面的this是自己的实例
-- 箭头里面的this是上下文
-- 谁调用该函数this指向谁
+
+- 在全局作用于下调用函数 this 是 window
+- new 的 function 里面的 this 是自己的实例
+- 箭头里面的 this 是上下文
+- 谁调用该函数 this 指向谁
 
 #### 闭包
+
 函数能够记住并访问自己的词法作用域， 即使函数在自己的词法作用域以外执行
 
 #### 深度拷贝
-- JSON.parse(JSON.stringify(object))， 不能识别undefined、不能识别嵌套引用、会忽略函数、会忽略symbol
+
+- JSON.parse(JSON.stringify(object))， 不能识别 undefined、不能识别嵌套引用、会忽略函数、会忽略 symbol
 - Messagechannel， 会忽略函数
-- 自己实现递归的[deepclone](./deepclone.js) 
+- 自己实现递归的[deepclone](./deepclone.js)
 
 #### 原型链
+
 - 调用一个对象的方法时候， 对象会从自己的实例和原型链上面查找有没有这个函数
-- 每个对象实例都有一个_proto_属性指向自己的原型链
-- 每个函数都有一个prototype属性指向当前函数的实例
+- 每个对象实例都有一个*proto*属性指向自己的原型链
+- 每个函数都有一个 prototype 属性指向当前函数的实例
+
+#### [手写 promise](./promise.js)
+
+#### [手写 bind](./bind.js)
+
+#### [手写 new 的实现](./new.js)
+
+#### [手写 apply](./apply.js)
 
 ## [隐式转换](https://blog.csdn.net/lyh1299259684/article/details/80565419)
 
