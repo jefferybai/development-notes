@@ -14,10 +14,10 @@
       - [深度拷贝](#%E6%B7%B1%E5%BA%A6%E6%8B%B7%E8%B4%9D)
       - [原型链](#%E5%8E%9F%E5%9E%8B%E9%93%BE)
       - [Event Loop](#event-loop)
-      - [手写 promise](#%E6%89%8B%E5%86%99-promise)
-      - [手写 bind](#%E6%89%8B%E5%86%99-bind)
-      - [手写 new 的实现](#%E6%89%8B%E5%86%99-new-%E7%9A%84%E5%AE%9E%E7%8E%B0)
-      - [手写 apply](#%E6%89%8B%E5%86%99-apply)
+      - [promise](#%E6%89%8B%E5%86%99-promise)
+      - [bind](#%E6%89%8B%E5%86%99-bind)
+      - [new 的实现](#%E6%89%8B%E5%86%99-new-%E7%9A%84%E5%AE%9E%E7%8E%B0)
+      - [apply](#%E6%89%8B%E5%86%99-apply)
   - [隐式转换](#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2)
       - [转换规则](#%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99)
       - [React setState 什么时候同步?时候时候异步?](#react-setstate-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%90%8C%E6%AD%A5%E6%97%B6%E5%80%99%E6%97%B6%E5%80%99%E5%BC%82%E6%AD%A5)
@@ -112,13 +112,17 @@ js一般将任务分别放入三个容器，同步执行栈、宏任务队列、
 当执行栈里面的任务执行完毕、js会取出宏任务队列的队首和微任务队列的全部任务至执行栈。 周而复始，直到任务全部执行完成。 
 
 
-#### [手写 promise](./promise.js)
+#### promise 
+[code](./promise.js)
 
-#### [手写 bind](./bind.js)
+#### bind
+[code](./bind.js)
 
-#### [手写 new 的实现](./new.js)
+#### new 的实现
+[code](./new.js)
 
-#### [手写 apply](./apply.js)
+#### apply
+[code](./apply.js)
 
 ## [隐式转换](https://blog.csdn.net/lyh1299259684/article/details/80565419)
 
