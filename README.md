@@ -4,17 +4,23 @@
 
 - [javascript](#javascript)
   - [基础知识](#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86)
-    - [js 的六种原始类型](#js%E7%9A%84%E5%85%AD%E7%A7%8D%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B)
-    - [typeof vs instanceof](#typeof-vs-instanceof)
-    - [对象转换原始类型的规则](#%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A7%84%E5%88%99)
-    - [四则运算符](#%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97%E7%AC%A6)
-    - [比较运算法](#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E6%B3%95)
-    - [this](#this)
-    - [闭包](#%E9%97%AD%E5%8C%85)
-    - [深度拷贝](#%E6%B7%B1%E5%BA%A6%E6%8B%B7%E8%B4%9D)
+      - [js 的六种原始类型](#js-%E7%9A%84%E5%85%AD%E7%A7%8D%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B)
+      - [typeof vs instanceof](#typeof-vs-instanceof)
+      - [对象转换原始类型的规则](#%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E5%8E%9F%E5%A7%8B%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A7%84%E5%88%99)
+      - [四则运算符](#%E5%9B%9B%E5%88%99%E8%BF%90%E7%AE%97%E7%AC%A6)
+      - [比较运算法](#%E6%AF%94%E8%BE%83%E8%BF%90%E7%AE%97%E6%B3%95)
+      - [this](#this)
+      - [闭包](#%E9%97%AD%E5%8C%85)
+      - [深度拷贝](#%E6%B7%B1%E5%BA%A6%E6%8B%B7%E8%B4%9D)
+      - [原型链](#%E5%8E%9F%E5%9E%8B%E9%93%BE)
+      - [Event Loop](#event-loop)
+      - [手写 promise](#%E6%89%8B%E5%86%99-promise)
+      - [手写 bind](#%E6%89%8B%E5%86%99-bind)
+      - [手写 new 的实现](#%E6%89%8B%E5%86%99-new-%E7%9A%84%E5%AE%9E%E7%8E%B0)
+      - [手写 apply](#%E6%89%8B%E5%86%99-apply)
   - [隐式转换](#%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2)
-    - [转换规则](#%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99)
-    - [React setState 什么时候同步?时候时候异步?](#react-setstate-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%90%8C%E6%AD%A5%E6%97%B6%E5%80%99%E6%97%B6%E5%80%99%E5%BC%82%E6%AD%A5)
+      - [转换规则](#%E8%BD%AC%E6%8D%A2%E8%A7%84%E5%88%99)
+      - [React setState 什么时候同步?时候时候异步?](#react-setstate-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%90%8C%E6%AD%A5%E6%97%B6%E5%80%99%E6%97%B6%E5%80%99%E5%BC%82%E6%AD%A5)
 - [css](#css)
   - [css 垂直居中对齐的 4 中方法](#css-%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90%E7%9A%84-4-%E4%B8%AD%E6%96%B9%E6%B3%95)
 - [typescript](#typescript)
@@ -80,6 +86,31 @@ instanceof 判断么个函数的引用类型是否出现在实例类型的原型
 - 调用一个对象的方法时候， 对象会从自己的实例和原型链上面查找有没有这个函数
 - 每个对象实例都有一个*proto*属性指向自己的原型链
 - 每个函数都有一个 prototype 属性指向当前函数的实例
+
+#### Event Loop
+
+js所多线程的， 但是浏览器是多线程的。 
+
+并发是指多个线程切换完成任务， 并行是指多个处理器同时处理不同的线程。
+
+浏览器的线程一般分为， 渲染线程、操作dom线程、计时器线程、js引擎线程、网络请求线程。
+
+宏任务一般都有settimeout、 I/O、setInterval、requestAnimationFrame。
+
+微任务一般都有promise、process.nextTick。
+
+js一般将任务分别放入三个容器，同步执行栈、宏任务队列、微任务队列。 
+
+浏览器执行js，进入全局上下文，js从上往下执行，当遇到同步函数时候，函数依次加入执行栈并执行。
+
+当遇到settimeout、setInterval等计时器函数时候，浏览器会开启计时器线程。 
+
+当计时器线程执行完毕、js会将计时器线程里面的回调函数依次放入宏任务队列。
+
+当遇到promise等函数时候，浏览器会将回调函数放入微任务队列。
+
+当执行栈里面的任务执行完毕、js会取出宏任务队列的队首和微任务队列的全部任务至执行栈。 周而复始，直到任务全部执行完成。 
+
 
 #### [手写 promise](./promise.js)
 
