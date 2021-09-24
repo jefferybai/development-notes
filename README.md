@@ -124,6 +124,24 @@ js一般将任务分别放入三个容器，同步执行栈、宏任务队列、
 #### apply
 [code](./apply.js)
 
+#### 缓存
+##### 缓存位置
+- Service Worker 根据mainfest里面的配置文件缓存文件
+- Memory Cache 缓存到内存
+- Disc Cache 缓存到硬盘
+- Push Cache http2独有的缓存机制，缓存在session中， 断开连接失效
+#### 缓存策略
+- 强缓存
+  - Expirese 设置缓存失效日期
+  - Cache-Control 设置失效时长
+- 协商缓存
+  - Last-Modified 最后更新时间
+  - ETag 文件指纹，当文件有更新时候ETag值会发生改变
+#### 缓存机制
+当发起http请求时候，会先检查Service Worker、Memroy Cache、Disc Cache里面寻找有没有相关文件。并检查Expirese和Cache-Control的失效期。如果失效，会发起http请求，http请求会访问当前文件的Last-Modified或者ETag，如果没有发生改变
+那么返回304。浏览器拿到304会去缓存里面取出缓存的文件并使用。
+
+
 ## [隐式转换](https://blog.csdn.net/lyh1299259684/article/details/80565419)
 
 在 js 中，当运算符在运算时，如果两边数据不统一，CPU 就无法计算，这时我们编译器会自动将运算符两边的数据做一个数据类型转换，转成一样的数据类型再计算
