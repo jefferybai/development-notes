@@ -11,21 +11,20 @@ function MyPromise(fn) {
   this.value;
   this.rejectValue;
   this.status = PENDDING;
-  let that = this;
 
-  function resolve(res) {
+  const resolve = (res) => {
     if(this.status === PENDDING) {
       this.status = RESOLVE;
       this.value = res;
-      that.resolveCallbacks.forEach((resFn) => resFn(this.value));
+      this.resolveCallbacks.forEach((resFn) => resFn(this.value));
     } 
   }
 
-  function reject(error) {
+  const reject = (error) => {
     if(this.status === PENDDING) {
       this.status = REJECT;
       this.rejectValue = error;
-      that.rejectCallbacks.forEach((resFn) => resFn(this.rejectValue));
+      this.rejectCallbacks.forEach((resFn) => resFn(this.rejectValue));
     }
   }
 
