@@ -14,15 +14,19 @@ function MyPromise(fn) {
   let that = this;
 
   function resolve(res) {
-    this.status = RESOLVE;
-    this.value = res;
-    that.resolveCallbacks.forEach((resFn) => resFn(this.value));
+    if(this.status === PENDDING) {
+      this.status = RESOLVE;
+      this.value = res;
+      that.resolveCallbacks.forEach((resFn) => resFn(this.value));
+    } 
   }
 
   function reject(error) {
-    this.status = REJECT;
-    this.rejectValue = error;
-    that.rejectCallbacks.forEach((resFn) => resFn(this.rejectValue));
+    if(this.status === PENDDING) {
+      this.status = REJECT;
+      this.rejectValue = error;
+      that.rejectCallbacks.forEach((resFn) => resFn(this.rejectValue));
+    }
   }
 
   fn(resolve, reject)
