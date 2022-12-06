@@ -1,4 +1,4 @@
-new Promise((reslove, reject) => res(1)).then(() => {});
+// new Promise((reslove, reject) => res(1)).then(() => {});
 
 const PENDDING = 'pendding';
 const RESOLVE = 'resolve';
