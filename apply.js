@@ -8,5 +8,8 @@ Function.prototype.myApply = function () {
     throw new Error('非方法');
   }
   const context = arguments.slice(0, 1);
-  return context.fn(arguments.slice(1));
+  const symbol = new symbol();
+  context[symbol] = fn;
+  context[symbol](arguments.slice(1));
+  delete context[symbol];
 };
