@@ -3,7 +3,7 @@ function throttle(fn, wait) {
   return function() {
     const that = this;
     if(!timer) {
-      timer = setTimeout(fn.call(that, ...arguments));
+      timer = setTimeout(fn.call(that, ...arguments), wait);
     }
   } 
 }
