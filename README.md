@@ -186,6 +186,88 @@ js一般将任务分别放入三个容器，同步执行栈、宏任务队列、
 # typescript
 
 # slatejs
+1. model
+   ### 数据结构
+   type node = Editor | Element | Text;
+   type Element = {
+    type: 'p' | 'div' | ''
+    children: node[]
+   }
+   type Text = {
+    type: 'text'
+    text: string,
+   [key: string]: unknown
+   }
+   ### 操作原则
+   通过model的Transform类生成Operation的形式去原子化的更改node结点
+   #### Operation的事件类型
+   - insert_node
+   - remove_node
+   - set_node
+   - merge_node
+   - split_node
+   - ...
+   #### Operation的方法体
+   insert_node(
+      editor,
+      node,
+      location
+   )
+   #### location的描述
+   type Path = number[];
+   type Point = {
+    path: Path,
+    offert: number
+   }
+   type Range = {
+    start: Point,
+    end: Point
+   }
+   
+3. 序列化/反序列化
+   {
+    type: "p"
+    children: [
+      {type: "section"}
+    ]
+   }
+   
+5. 视图
+   React
+   const renderElement = (node) => {
+     switch(node.type)
+     case: 'p'
+     return <p>{node.text}<p>
+   }
+
+7. normallize
+   数据标准化校验，作用于past html， 和对opration的进行校验
+   
+9. 键盘管理
+
+    
+11. redo/undo
+   type redo = Operation[]
+   type undo = Operation[]
+   ####协同
+   crdt
+   const resultJson = json + [...redo];
+   #### 满足的条件
+   - 交换律
+   - 结合律
+   - 幂等
+   
+   ot
+    
+13. 插件
+    const editor = withBlodText(editor: Editor);
+    const withBlodText = (editor) => {
+      editor.blod = () => {
+        
+      }
+    }
+    
+15. 选取和光标处理
 
 # flutter
 
