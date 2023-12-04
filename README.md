@@ -269,6 +269,27 @@ js一般将任务分别放入三个容器，同步执行栈、宏任务队列、
     
 15. 选取和光标处理
 
+# docker
+  docker的作用，环境隔离、快速部署、易于移植。
+  ### docker的三个概念
+  - 镜像 类似于win7.ios
+  - 仓库 存储镜像的地方
+  - 容器 镜像运行起来就是容器
+  ### 常用的docker命令
+  - docker run       运行容器
+  - docker delete    删除容器
+  - dockder restart  重启容器
+  - docker stop      停止容器
+  - docker create    生成容器
+  - docker build     生成镜像
+  - docker load      加载镜像
+  - docker pull      从仓库拉取镜像
+  - docker push      上传镜像到容器
+  ### dockerfile
+  类似于package.json
+  ### dockercompose
+  组合命令
+
 # flutter
 
 # Chrome-DevTools
