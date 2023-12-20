@@ -249,7 +249,7 @@ js一般将任务分别放入三个容器，同步执行栈、宏任务队列、
 11. redo/undo
    type redo = Operation[]
    type undo = Operation[]
-   ####协同
+   #### 协同
    crdt
    const resultJson = json + [...redo];
    #### 满足的条件
